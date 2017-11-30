@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+
+    <style name="EditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlActivated">#27D5E8</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
 </resources>

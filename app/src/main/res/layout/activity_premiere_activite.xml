@@ -1,18 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.abdelouahad.mustapha.myfirstapp.PremiereActivite">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
+
+    <!-- mettre les composants ici -->
     <TextView
+        android:id="@+id/txtPoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/poids"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/editPoids"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Poids"
+        android:inputType="numberDecimal"
+        android:theme="@style/EditTextTheme"
+        />
 
-</android.support.constraint.ConstraintLayout>
+    <!--android:backgroundTint="#27D5E8"-->
+    <TextView
+        android:id="@+id/txtTaille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taille"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/editTaille"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Taille"
+        android:inputType="numberDecimal"
+        android:theme="@style/EditTextTheme"
+        />
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radio2"
+        android:theme="@style/EditTextTheme"
+        >
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/metre"
+            />
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/centimetre"
+            />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/mega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkBox"
+        android:checked="false"
+        />
+    <Button
+        android:id="@+id/calcul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/imc"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/raz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/raz"
+        android:textAllCaps="false"
+        />
+    <TextView
+        android:id="@+id/resultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultat"
+        />
+    <TextView
+        android:id="@+id/showResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/défault"
+        />
+</LinearLayout>
