@@ -20,7 +20,7 @@
         android:id="@+id/editPoids"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Poids"
+        android:hint="@string/poidsHint"
         android:inputType="numberDecimal"
         android:theme="@style/EditTextTheme"
         />
@@ -40,7 +40,7 @@
         android:id="@+id/editTaille"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Taille"
+        android:hint="@string/tailleHint"
         android:inputType="numberDecimal"
         android:theme="@style/EditTextTheme"
         />
@@ -93,10 +93,10 @@
         android:layout_height="wrap_content"
         android:text="@string/resultat"
         />
+
     <TextView
         android:id="@+id/showResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/défault"
-        />
+        android:text="@string/défault" />
 </LinearLayout>
