@@ -18,6 +18,9 @@ import java.text.DecimalFormat;
 
 public class PremiereActivite extends AppCompatActivity implements View.OnClickListener {
 
+    /**
+     * Widgets from user Interface
+     */
     private EditText poids = null;
     private EditText taille = null;
     private RadioGroup group = null;
@@ -33,11 +36,15 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     Boolean ENABLE = true;
 
 
+    /**
+     * Linked WIDGETS and Interface
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_premiere_activite);
+
         poids =  findViewById(R.id.editPoids);
         taille = findViewById(R.id.editTaille);
         megaFunc = findViewById(R.id.mega);
@@ -58,6 +65,10 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+    /**
+     * TextWatcher for detect operation about Text (Changed ...)
+     */
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -82,16 +93,30 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
+        /*
+        Detected Button Clicked
+         */
         switch (v.getId()){
             case R.id.calcul:
                 Toast.makeText(v.getContext(),"CALCUL",Toast.LENGTH_SHORT).show();
                 Float result;
-                DecimalFormat df = new DecimalFormat("0.00");
-                int checkBoxSelect= group.getCheckedRadioButtonId();
 
+                DecimalFormat df = new DecimalFormat("0.00");
+                /* Get values Fields
+                    -checkBox
+                    -EditText Poids
+                    -EditText Taille
+                 */
+                int checkBoxSelect= group.getCheckedRadioButtonId();
                 float poidsKg = Float.parseFloat(poids.getText().toString());
                 float tailleMetre = Float.parseFloat(taille.getText().toString());
+
                 switch (checkBoxSelect){
+                    /*
+                    Cacul IMC
+                    -IF Radio2 selected Then convert centimeters to meters for calculate User's IMC
+                    -neither just calcultate without conversion
+                     */
                     case R.id.radio2:
                         tailleMetre /= 100;
                         tailleMetre = (float) Math.pow(tailleMetre,2);
@@ -102,6 +127,9 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
                         result = poidsKg/tailleMetre;
                         break;
                 }
+                /*
+                Change the resultat's sentence by megaFunc CheckBox is checked or not
+                 */
                 if(megaFunc.isChecked()) {
                     String resultRounded = df.format(result);
                     resultat.setText(resultRounded + " " + megaStrg);
@@ -111,6 +139,9 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.raz:
+                /*
+                *Reinitialize ALl Fields
+                */
                 resultat.setText(defaut);
                 poids.getText().clear();
                 taille.getText().clear();
