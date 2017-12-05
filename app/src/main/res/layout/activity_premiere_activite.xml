@@ -1,102 +1,143 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/colorBlack"
     android:orientation="vertical">
 
 
+    <android.support.v4.widget.Space
+        android:layout_width="wrap_content"
+        android:layout_height="14dp" />
     <!-- mettre les composants ici -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:id="@+id/txtPoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/poids"
         android:textColor="#FF0000"
         android:textStyle="bold"
-        android:layout_gravity="center"
-        android:gravity="center"
-        />
-    <EditText
-        android:id="@+id/editPoids"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/poidsHint"
-        android:inputType="numberDecimal"
-        android:theme="@style/EditTextTheme"
         />
 
-    <!--android:backgroundTint="#27D5E8"-->
+    <EditText
+        android:id="@+id/editPoids"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:hint="@string/poidsHint"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorOrange"
+        android:theme="@style/EditTextTheme"
+        android:layout_weight="1"/>
+    </LinearLayout>
+<android.support.v4.widget.Space
+    android:layout_width="wrap_content"
+    android:layout_height="14dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:id="@+id/txtTaille"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="@string/taille"
         android:textColor="#FF0000"
         android:textStyle="bold"
-        android:layout_gravity="center"
-        android:gravity="center"
         />
+
     <EditText
         android:id="@+id/editTaille"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
         android:hint="@string/tailleHint"
         android:inputType="numberDecimal"
+        android:textColor="@color/colorOrange"
         android:theme="@style/EditTextTheme"
-        />
+        android:layout_weight="1"/>
+    </LinearLayout>
+
+
     <RadioGroup
         android:id="@+id/rdGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:checkedButton="@id/radio2"
-        android:theme="@style/EditTextTheme"
+        android:orientation="horizontal"
         >
+
         <RadioButton
             android:id="@+id/radio1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/metre"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Notification.Time"
+            android:textColor="@color/colorWhite"
+            android:buttonTint="@color/colorOrange"/>
+
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/centimetre"
-            />
+            android:textColor="@color/colorWhite"
+            android:buttonTint="@color/colorOrange"/>
     </RadioGroup>
 
     <CheckBox
         android:id="@+id/mega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/checkBox"
         android:checked="false"
-        />
+        android:text="@string/checkBox"
+        android:textColor="@color/colorWhite"
+        android:buttonTint="@color/colorOrange"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <Button
         android:id="@+id/calcul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/imc"
         android:textAllCaps="false"
+        android:layout_marginLeft="25dip"
+        android:layout_marginRight="25dip"
         />
+
     <Button
         android:id="@+id/raz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/raz"
         android:textAllCaps="false"
+        android:layout_marginLeft="25dip"
+        android:layout_marginRight="25dip"
         />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/resultat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resultat"
-        />
+        android:textColor="@color/colorWhite"/>
 
     <TextView
         android:id="@+id/showResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
         android:text="@string/défault" />
 </LinearLayout>

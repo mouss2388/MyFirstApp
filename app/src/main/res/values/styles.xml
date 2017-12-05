@@ -11,8 +11,10 @@
 
 
 
-    <style name="EditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorControlActivated">#27D5E8</item>
-        <item name="colorControlHighlight">@color/colorAccent</item>
+    <style name="EditTextTheme" parent="@android:style/Widget.EditText">
+        <item name="colorControlActivated">@color/colorOrange</item>
+        <item name="android:textColorHint">@color/colorGreay</item>
+        <item name="android:textColor">@color/colorOrange</item>
+
     </style>
 </resources>
