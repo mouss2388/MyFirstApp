@@ -69,14 +69,22 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     /**
      * TextWatcher for detect operation about Text (Changed ...)
      */
+
+
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             resultat.setText(defaut);
             if(!isEmpty(poids) && !isEmpty(taille))
-                if(!isNegative(poids) && !isNegative(taille))
+                if(!isNegative(poids) && !isNegative(taille)) {
                     calcul.setEnabled(ENABLE);
-                else
+                    String number = String.valueOf(taille.getText());
+                    if(number.contains("."))
+                        group.check(R.id.radio1);
+                    else
+                        group.check(R.id.radio2);
+
+                }else
                     calcul.setEnabled(DISABLE);
             else
                 calcul.setEnabled(DISABLE);
