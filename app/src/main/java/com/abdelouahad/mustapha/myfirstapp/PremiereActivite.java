@@ -1,5 +1,6 @@
 package com.abdelouahad.mustapha.myfirstapp;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -22,14 +23,41 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     private RadioGroup group = null;
     private CheckBox megaFunc = null;
     private Button calcul = null;
-    private Button raz = null;
+
     private TextView resultat = null;
     private String megaStrg = null;
     private String defaut = null;
     private String TAG = getClass().getSimpleName();
-    private Boolean DISABLE = false;
-    private Boolean ENABLE = true;
 
+    Boolean DISABLE = false;
+    Boolean ENABLE = true;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_premiere_activite);
+        poids =  findViewById(R.id.editPoids);
+        taille = findViewById(R.id.editTaille);
+        megaFunc = findViewById(R.id.mega);
+        group = findViewById(R.id.rdGroup);
+        calcul =findViewById(R.id.calcul);
+        Button raz = findViewById(R.id.raz);
+        resultat =  findViewById(R.id.showResult);
+        megaStrg = getResources().getString(R.string.megaStrg);
+        defaut= getResources().getString(R.string.défault);
+        Log.i(TAG,"ONCREATE ");
+
+        calcul.setEnabled(false);
+        calcul.setOnClickListener(this);
+        raz.setOnClickListener(this);
+
+        poids.addTextChangedListener(textWatcher);
+        taille.addTextChangedListener(textWatcher);
+
+
+    }
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -51,37 +79,13 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
         public void afterTextChanged(Editable s) {
         }
     };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_premiere_activite);
-        poids = (EditText) findViewById(R.id.editPoids);
-        taille = (EditText) findViewById(R.id.editTaille);
-        megaFunc = (CheckBox) findViewById(R.id.mega);
-        group = (RadioGroup) findViewById(R.id.rdGroup);
-        calcul =(Button) findViewById(R.id.calcul);
-        raz = (Button) findViewById(R.id.raz);
-        resultat = (TextView) findViewById(R.id.showResult);
-        megaStrg = getResources().getString(R.string.megaStrg).toString();
-        defaut= getResources().getString(R.string.défault).toString();
-        Log.i(TAG,"ONCREATE ");
-
-        calcul.setEnabled(false);
-        calcul.setOnClickListener(this);
-        raz.setOnClickListener(this);
-
-        poids.addTextChangedListener(textWatcher);
-        taille.addTextChangedListener(textWatcher);
-
-
-    }
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.calcul:
                 Toast.makeText(v.getContext(),"CALCUL",Toast.LENGTH_SHORT).show();
-                Float result = 0.0f;
+                Float result;
                 DecimalFormat df = new DecimalFormat("0.00");
                 int checkBoxSelect= group.getCheckedRadioButtonId();
 
@@ -99,7 +103,8 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
                         break;
                 }
                 if(megaFunc.isChecked()) {
-                    resultat.setText(df.format(result) + " " + megaStrg);
+                    String resultRounded = df.format(result);
+                    resultat.setText(resultRounded + " " + megaStrg);
                 }else {
                     resultat.setText(df.format(result));
                 }
@@ -123,19 +128,11 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     }
 
     private boolean isEmpty(EditText  editText){
-        if(editText.getText().length()>0){
-            return false;
-        }else{
-            return true;
-        }
+        return editText.getText().length() <= 0;
     }
 
     private boolean isNegative(EditText editText) {
         Double value = Double.parseDouble(editText.getText().toString());
-        if (value < 0.0d || value == 0.0d) {
-            return true;
-        } else {
-            return false;
-        }
+        return value < 0.0d || value == 0.0d;
     }
 }
