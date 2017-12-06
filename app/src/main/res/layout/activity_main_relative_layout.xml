@@ -1,22 +1,102 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@color/colorBlack">
+
 
     <TextView
+        android:id="@+id/leftTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Centré dans le parent"
-        android:layout_centerInParent="true" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Centré verticalement"
-        android:layout_centerVertical="true" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Centré horizontalement"
-        android:layout_centerHorizontal="true" />
+        android:text="@string/None"
+        android:textColor="@color/colorWhite"
+        />
 
+
+    <TextView
+        android:id="@+id/topCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Horizon"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/topRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alignParentRight"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentEnd="true"
+
+        />
+
+
+    <TextView
+        android:id="@+id/middleLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Vertical"
+        android:textColor="@color/colorWhite"
+        android:layout_centerVertical="true"
+        />
+
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Center_in_Parent"
+        android:textColor="@color/colorWhite"
+        android:layout_centerInParent="true"
+        />
+
+
+    <TextView
+        android:id="@+id/centerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Center_Right"
+        android:textColor="@color/colorWhite"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+
+    <TextView
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alignParentBottom"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        />
+
+
+    <TextView
+        android:id="@+id/bottomCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alignBottom_Center"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        />
+
+
+    <TextView
+        android:id="@+id/bottomRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alignRight_Bottom"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        />
 </RelativeLayout>

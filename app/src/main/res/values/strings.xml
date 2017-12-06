@@ -12,4 +12,16 @@
     <string name="resultat">Résultat:</string>
     <string name="megaStrg">Vous faites un poids parfait ! Wahou ! Trop fort ! On dirait Brad Pitt (si vous êtes un homme)/Angelina Jolie (si vous êtes une femme)/Willy (si vous êtes un orque) !</string>
     <string name="défault">Vous devez cliquer sur le bouton "Calculer l\'IMC" pour obtenir un résultat.</string>
+
+    <string name="None">None</string>
+    <string name="Horizon">Horizon</string>
+    <string name="alignParentRight">alignParentRight</string>
+    <string name="Vertical">Vertical</string>
+    <string name="Center_in_Parent">Center in Parent</string>
+    <string name="Center_Right">Center+Right</string>
+    <string name="alignParentBottom">alignParentBottom</string>
+    <string name="alignBottom_Center">alignBottom+Center</string>
+    <string name="alignRight_Bottom">alignRight+Bottom</string>
+
+
 </resources>
