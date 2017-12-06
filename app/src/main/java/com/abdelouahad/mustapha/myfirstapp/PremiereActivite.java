@@ -1,9 +1,11 @@
 package com.abdelouahad.mustapha.myfirstapp;
 
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +37,7 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     Boolean DISABLE = false;
     Boolean ENABLE = true;
 
+    private Boolean makeTable =  false;
 
     /**
      * Linked WIDGETS and Interface
@@ -43,7 +46,12 @@ public class PremiereActivite extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_premiere_activite);
+        if(makeTable)
+            setContentView(R.layout.app_via_table);
+
+        else
+            setContentView(R.layout.activity_premiere_activite);
+
 
         poids =  findViewById(R.id.editPoids);
         taille = findViewById(R.id.editTaille);

@@ -3,8 +3,8 @@
     <string name="checkBox">Mega fonction !</string>
     <string name="poids">Poids :</string>
     <string name="taille">Taille :</string>
-    <string name="poidsHint">Poids...</string>
-    <string name="tailleHint">Taille...</string>
+    <string name="poidsHint">Poids&#8230;</string>
+    <string name="tailleHint">Taille&#8230;</string>
     <string name="metre">Mètre</string>
     <string name="centimetre">Centimètre</string>
     <string name="imc">Calculez l\'IMC</string>
@@ -24,4 +24,12 @@
     <string name="alignRight_Bottom">alignRight+Bottom</string>
 
 
+
+    <string name="itemsOpenUnderMenu">Les items précédés d\'un V ouvrent un sous menu</string>
+    <string name="doNotOpenUnderMenu">N\'ouvre pas un sous-menu</string>
+    <string name="no">Non !</string>
+    <string name="V">V</string>
+    <string name="openUnderMenu">Ouvre un sous-menu</string>
+    <string name="hereOkey">Là si !</string>
+    <string name="objectExtendsTwoColm">Cet item s\'étend sur deux colonnes, cool hein ?</string>
 </resources>
